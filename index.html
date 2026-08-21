@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Jack电脑配置报价单</title>
+<style>
+  :root { --blue:#0070C0; --h:#5B9BD5; --cream:#FFF2CC; --rowb:#9DC3E6; --side:#B8CDE2; --total:#FFECD6; --foot:#FFF3E8; --line:#111; }
+  * { box-sizing: border-box; }
+  body { margin:0; background:#e8eef4; font-family:"WenQuanYi Zen Hei","Noto Sans SC","Microsoft YaHei",sans-serif; color:#111; }
+  .page { max-width: 920px; margin: 24px auto 48px; padding: 0 16px; }
+  .toolbar { display:flex; gap:10px; flex-wrap:wrap; margin-bottom:14px; }
+  .toolbar button, .toolbar a.btn {
+    background: var(--blue); color:#fff; border:0; border-radius:8px; padding:10px 16px;
+    font-size:15px; font-weight:700; cursor:pointer; text-decoration:none; display:inline-block;
+  }
+  .toolbar button.alt { background:#1f3d5c; }
+  .hint { color:#445; font-size:13px; margin: 0 0 12px; }
+  #quote { background:#fff; }
+  table { width:100%; border-collapse:collapse; border:3px solid #000; table-layout:fixed; }
+  caption { background:var(--blue); color:#fff; font-size:34px; font-weight:900; letter-spacing:3px;
+    padding:22px 8px; border:3px solid #000; border-bottom:0; text-shadow: 0 2px 0 #07325a, 2px 0 0 #07325a, -2px 0 0 #07325a, 0 -2px 0 #07325a; }
+  th, td { border:1.5px solid #000; text-align:center; padding:8px 6px; font-size:16px; }
+  th { background:var(--h); color:#fff; font-size:18px; }
+  .side { background:var(--side); font-weight:800; font-size:20px; writing-mode:vertical-rl; letter-spacing:10px; }
+  .cream { background:var(--cream); }
+  .blue { background:var(--rowb); }
+  .white { background:#fff; }
+  .grey { background:#e8e8e8; }
+  .total td { background:var(--total); font-size:28px; font-weight:800; padding:16px 8px; }
+  .foot td { background:var(--foot); padding:16px 10px; font-size:16px; line-height:1.7; }
+  .foot .warranty { font-size:18px; font-weight:800; }
+  col.c0 { width:52px; } col.c1 { width:90px; } col.c2 { width:auto; }
+  col.c3 { width:70px; } col.c4 { width:70px; } col.c5 { width:110px; }
+  @media print {
+    body { background:#fff; }
+    .toolbar, .hint { display:none !important; }
+    .page { margin:0; max-width:none; padding:0; }
+    caption { -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+    th, td { -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+  <div class="toolbar">
+    <button type="button" onclick="window.print()">打印 / 另存为 PDF</button>
+    <button type="button" class="alt" onclick="savePng()">下载 PNG 图片</button>
+  </div>
+  <p class="hint">手机：点「下载 PNG」。电脑：点「打印」→ 目标选「另存为 PDF」。</p>
+  <div id="quote">
+    <table>
+      <colgroup>
+        <col class="c0"><col class="c1"><col class="c2"><col class="c3"><col class="c4"><col class="c5">
+      </colgroup>
+      <caption>Jack电脑配置报价单</caption>
+      <thead>
+        <tr>
+          <th colspan="2">配置</th>
+          <th>型号</th>
+          <th>单位</th>
+          <th>数量</th>
+          <th>价格</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="cream">
+          <td class="side" rowspan="9">主机</td>
+          <td>CPU</td><td>U7 265K</td><td>个</td><td>1</td><td>1730</td>
+        </tr>
+        <tr class="blue">
+          <td>主板</td><td>华硕B860 WIFI</td><td>片</td><td>1</td><td>950</td>
+        </tr>
+        <tr class="cream">
+          <td>内存</td><td>海盗船DDR5 4800 32G</td><td>条</td><td>1</td><td>2550</td>
+        </tr>
+        <tr class="blue">
+          <td>硬盘一</td><td>致态ti600 1TB</td><td>个</td><td>1</td><td>920</td>
+        </tr>
+        <tr class="white">
+          <td>硬盘二</td><td>威刚2TB M2固态硬盘</td><td>个</td><td>1</td><td>1500</td>
+        </tr>
+        <tr class="blue">
+          <td>显卡</td><td>微星5070 ti 16G</td><td>片</td><td>1</td><td>8450</td>
+        </tr>
+        <tr class="cream">
+          <td>电源</td><td>鑫谷1000W</td><td>个</td><td>1</td><td>580</td>
+        </tr>
+        <tr class="cream">
+          <td>散热</td><td>六铜管散热</td><td>个</td><td>1</td><td>130</td>
+        </tr>
+        <tr class="cream">
+          <td>机箱</td><td>侧透机箱</td><td>台</td><td>1</td><td>200</td>
+        </tr>
+        <tr class="blue">
+          <td class="side" rowspan="3">外设</td>
+          <td>显示器</td><td>AOC 27寸 4K</td><td>台</td><td>1</td><td>980</td>
+        </tr>
+        <tr class="white">
+          <td>键鼠</td><td>无</td><td>套</td><td>1</td><td></td>
+        </tr>
+        <tr class="grey">
+          <td>其他</td><td>无</td><td></td><td></td><td></td>
+        </tr>
+        <tr class="total">
+          <td colspan="2">合计</td>
+          <td colspan="3">不含税</td>
+          <td>17990</td>
+        </tr>
+        <tr class="foot">
+          <td colspan="5">
+            地址：广东省深圳市福田区华强电子世界（深圳二店）<br/>
+            联系电话：13129556839（同微信）
+          </td>
+          <td class="warranty">质保三年！<br/>售后无忧！</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+<script>
+function savePng(){
+  const el = document.getElementById('quote');
+  html2canvas(el, {scale:2, backgroundColor:'#ffffff'}).then(function(canvas){
+    const a = document.createElement('a');
+    a.download = 'Jack电脑配置报价单.png';
+    a.href = canvas.toDataURL('image/png');
+    a.click();
+  });
+}
+</script>
+</body>
+</html>
